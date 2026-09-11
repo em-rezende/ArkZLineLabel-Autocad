@@ -1,0 +1,41 @@
+=== INSTRUCOES DE INSTALACAO - ArkZLineLabel v2.0.0 ===
+
+INSTALACAO:
+1. Execute o instalador como Administrador
+2. O plugin sera instalado em:
+   C:\Program Files\Autodesk\ApplicationPlugins\ArkZLineLabel.bundle\
+
+CARREGAMENTO:
+1. Reinicie o AutoCAD (se estiver aberto)
+2. O plugin sera carregado automaticamente
+
+COMANDOS DISPONIVEIS:
+   ARKZLINELABEL - Executar programa principal
+   ARKZCONFIG    - Configurar ambiente automaticamente
+   ARKZSAVEZONE  - Salvar zona no desenho
+   SELECTCITY    - Selecionar cidade e calcular fuso
+   ARKZVTX       - Inserir vértice avulso
+   ARKZAZI       - Inserir azimute avulso
+   ARKZTESTCSV   - Testar carregamento do CSV
+   ARKZFECHARCSV - Fecha polilinha a partir de pontos selecionados
+
+FUNCIONALIDADES:
+   - Navegacao por vertices com TAB/Setas
+   - Definicao de V1 e inversao de sentido
+   - Deteccao automatica Civil 3D via CGEOCS
+   - Verificacao e fechamento automatico de polilinhas
+   - Exportacao CSV da tabela de coordenadas
+   - MLEADER para anotacao de vertices
+
+DOCUMENTACAO:
+   Abra o arquivo: index.html na pasta Resources
+
+DESINSTALACAO:
+   Use o Painel de Controle > Programas e Recursos
+   ou execute o desinstalador no menu Iniciar
+
+SUPORTE:
+   Website: https://em-rezende.github.io/Ark-Z-Arquitetura.github.io/
+   Email: emrezende@gmail.com
+
+(c) 2026 ARK-Z ARQUITETURA

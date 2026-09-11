@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ApplicationPackage
+   SchemaVersion="1.0"
+   AutodeskProduct="AutoCAD"
+   ProductType="Application"
+   Name="ArkZ LineLabel"
+   AppVersion="1.0.0"
+   FriendlyVersion="1.0.0"
+   Description="ArkZLineLabel: Extrair dados geometricos de Polilinhas."
+   Author="Ezequiel M. Rezende"
+   Icon="./Contents/Resources/Ark-Z.ico"
+   AppNameSpace="appstore.exchange.autodesk.com"
+   HelpFile="./Contents/Resources/Index.htm"
+   ProductCode="{24081A5C-6906-4CD6-A2F9-96A652170C94}"
+   UpgradeCode=""
+   SupportedLocales="Enu"
+   OnlineDocumentation="https://arkz.duckdns.org/">
+
+  <CompanyDetails
+     Name="Ark-Z Arquitetura"
+     Email="emrezende@gmail.com"
+     Url="https://arkz.duckdns.org/"
+     Phone=""
+  />
+
+  <!-- Apenas UMA seção Components -->
+  <Components Description="2013 to 2026 Parts">
+    <RuntimeRequirements
+        SupportPath="./Contents/;./Contents/Windows/"
+        OS="Win32|Win64"
+        Platform="AutoCAD*|AutoCAD"
+        SeriesMin="R19.0"
+        SeriesMax="R26.0"
+    />
+    
+    <!-- Componente principal que carrega automaticamente o CUIX -->
+    <ComponentEntry
+        AppName="ArkZLineLabel Ribbon"
+        Version="1.0.0"
+        ModuleName="./Contents/Windows/ArkZLineLabel.cuix"
+        AppDescription="Faixa de opções ArkZLineLabel"
+        PerDocument="False"
+        LoadOnAutoCADStartup="True"
+    />
+    
+    <!-- Componente que carrega automaticamente o LSP -->
+    <ComponentEntry
+        AppName="ArkZLineLabel LSP"
+        Version="1.0.0"
+        ModuleName="./Contents/Windows/ArkZLineLabel.lsp"
+        AppDescription="ArkZLineLabel: Extrair dados geometricos de Polilinhas."
+        LoadOnAutoCADStartup="True"
+    />
+    
+    <!-- Comando principal -->
+    <Command Local="ArkZLineLabel" Group="Ark-Z" Global="ArkZLineLabel">
+        <ComponentEntry ModuleName="./Contents/Windows/ArkZLineLabel.lsp"/>
+    </Command>
+    
+  </Components>
+</ApplicationPackage>

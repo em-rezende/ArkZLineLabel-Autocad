@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArkZLineLabel · Automação Topográfica</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div style="margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        <span class="badge badge-dark">ARK-Z ARQUITETURA</span> <span class="badge">AUTOMAÇÃO
+          TOPOGRÁFICA &amp; ENGENHARIA</span> <span class="badge" style="background: #e0f2fe; color: #0369a1; border-color: #bae6fd;">VERSÃO
+          2.0.0</span> <span class="badge" style="background: #dcfce7; color: #166534; border-color: #bbf7d0;">NAVEGAÇÃO
+          POR VÉRTICES</span> <span class="badge" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">CURVAS
+          E BULGES</span> </div>
+      <h1>ArkZLineLabel · Rotulagem, Tabelas e Georreferenciamento UTM</h1>
+      <div class="lead-text"> A rotina profissional <strong>ArkZLineLabel</strong>
+        foi desenvolvida para oferecer total flexibilidade ao engenheiro e
+        projetista. O sistema permite escolher entre <strong>selecionar uma
+          poligonal existente</strong> diretamente na tela gráfica, <strong>navegar
+          visualmente pelos vértices</strong> com teclas TAB e Setas, definir o
+        <strong>Vértice Inicial (V1)</strong> ou realizar a <strong>importação
+          automatizada de dados de arquivos CSV/TXT</strong>. Além disso, a nova
+        versão conta com um <strong>Sistema Inteligente de Seleção de Cidades
+          (SIRGAS 2000)</strong>, que calcula automaticamente o Fuso UTM e o
+        Meridiano Central corretos para qualquer município do Brasil, e <strong>detecção
+          automática do sistema de coordenadas</strong> diretamente do Civil 3D.
+      </div>
+      <h2>📸 Telas de Operação (Interface DCL Dinâmica)</h2>
+      <div class="image-gallery">
+        <!-- Linha 1: Interface Principal -->
+        <div class="image-card" style="display: flex; gap: 1.5rem; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+          <div style="text-align: center; flex: 1; min-width: 280px;"> <img src="ArkZLineLabel_01.png"
+              alt="ArkZLineLabel_01" title="ArkZLineLabel_01">
+            <div class="image-caption">Figura 1: Interface com Modo Seleção e
+              Navegação de Vértices</div>
+          </div>
+          <div style="text-align: center; flex: 1; min-width: 280px;"> <img src="ArkZLineLabel_02.png"
+              alt="ArkZLineLabel_02" title="ArkZLineLabel_02">
+            <div class="image-caption">Figura 2: Módulo dedicado de Importação
+              CSV com Pré-visualização</div>
+          </div>
+        </div>
+        <!-- Linha 2: Seleção de Cidade e Alerta -->
+        <div class="image-card" style="display: flex; gap: 1.5rem; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin-top: 1.5rem;">
+          <div style="text-align: center; flex: 1; min-width: 280px;"> <img src="ArkZLineLabel_03.png"
+              alt="ArkZLineLabel_03" title="ArkZLineLabel_03">
+            <div class="image-caption">Figura 3: Seleção automática de Cidade e
+              cálculo de Fuso UTM</div>
+          </div>
+          <div style="text-align: center; flex: 1; min-width: 280px;"> <img src="ArkZLineLabel_04.png"
+              alt="ArkZLineLabel_04" title="ArkZLineLabel_04">
+            <div class="image-caption">Figura 4: Alerta de confirmação dos dados
+              SIRGAS 2000</div>
+          </div>
+        </div>
+      </div>
+      <h2>🛠️ Recursos e Funcionalidades Principais</h2>
+      <p>A rotina gerencia dados externos e geométricos de forma inteligente
+        antes de desenhar qualquer linha no AutoCAD, contando com ferramentas
+        completas de automação:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Recurso</th>
+            <th>Descrição Técnica</th>
+            <th>Vantagem no Fluxo de Trabalho</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>🔄 Navegação por Vértices</strong></td>
+            <td>Seleção da polilinha com ocultação do DCL. Navegação visual
+              pelos vértices usando teclas <strong>TAB</strong> ou <strong>Setas</strong>
+              com destaque <em>grdraw</em> em tempo real.</td>
+            <td>Permite definir com precisão o Vértice Inicial (V1) para iniciar
+              a numeração, sem necessidade de comandos manuais complexos.</td>
+          </tr>
+          <tr>
+            <td><strong>🎯 Definição de V1 e Sentido</strong></td>
+            <td>Controles para definir o vértice inicial (Spinner) e inverter o
+              sentido da polilinha (Horário/Anti-horário) com botão <strong>"Inverter"</strong>.</td>
+            <td>Flexibilidade total para adequar a numeração e o sentido às
+              normas de cadastro ou preferências do usuário.</td>
+          </tr>
+          <tr>
+            <td><strong>🧠 Detecção Civil 3D</strong></td>
+            <td>Leitura automática da variável <code>CGEOCS</code> para
+              identificar o Fuso e Meridiano configurados no desenho, sem
+              intervenção do usuário.</td>
+            <td>Integração nativa com projetos Civil 3D, eliminando
+              configurações manuais redundantes.</td>
+          </tr>
+          <tr>
+            <td><strong>🌍 Seleção de Cidade (SIRGAS 2000)</strong></td>
+            <td>Banco de dados interno (ArkZLineLabel.csv) que utiliza a
+              Longitude exata da cidade para calcular o Fuso UTM e o Meridiano
+              Central por fórmula matemática oficial com determinação automática
+              do hemisfério (N/S).</td>
+            <td>Elimina erros de tabelas manuais e garante o fuso correto para
+              cidades em divisas (Ex: Oiapoque/AP automaticamente no Fuso 22N).</td>
+          </tr>
+          <tr>
+            <td><strong>📐 Verificação e Fechamento de Fecho</strong></td>
+            <td>Análise automática da propriedade <code>Closed</code> da
+              polilinha. Detecta polilinhas abertas e oferece <strong>fechamento
+                automático</strong> com adição do vértice de fechamento, com
+              confirmação interativa.</td>
+            <td>Garante que a polilinha esteja geometricamente fechada para
+              cálculo correto de área e geração do memorial. Comandos <strong>ARKZFECHAR</strong>
+              e <strong>ARKZVERIFICAR</strong> para lote.</td>
+          </tr>
+          <tr>
+            <td><strong>📤 Exportação CSV</strong></td>
+            <td>Botão dedicado para exportar a tabela de coordenadas gerada para
+              arquivo CSV estruturado.</td>
+            <td>Facilita a integração com outros softwares e a entrega de dados
+              em formato universal.</td>
+          </tr>
+          <tr>
+            <td><strong>📝 Memorial Descritivo</strong></td>
+            <td>Geração automática do memorial em <strong>MText</strong>
+              (dentro do AutoCAD) <strong>ou arquivo TXT</strong>, incluindo
+              Fuso, Meridiano, área, perímetro e campos para preenchimento de
+              dados do proprietário e responsável técnico.</td>
+            <td>Documentação completa e padronizada para processos de
+              georreferenciamento e registro de imóveis.</td>
+          </tr>
+          <tr>
+            <td><strong>📊 Tabela UTM</strong></td>
+            <td>Criação de tabela no AutoCAD com colunas: VÉRTICE, NORTE, ESTE,
+              DE, PARA, AZIMUTE/RAIO e DISTÂNCIA. Suporte a <strong>curvas
+                (bulges)</strong> com exibição de RAIO.</td>
+            <td>Planilha de coordenadas pronta para impressão e conferência em
+              campo.</td>
+          </tr>
+          <tr>
+            <td><strong>🔢 Múltiplos Separadores CSV</strong></td>
+            <td>Suporte nativo para delimitadores: Vírgula (,), Ponto e Vírgula
+              (;) ou Tabulação (Tab).</td>
+            <td>Compatível com planilhas geradas no Excel, BrOffice ou blocos de
+              notas brutos.</td>
+          </tr>
+          <tr>
+            <td><strong>🔀 Mapeamento Invertido</strong></td>
+            <td>Menus suspensos que identificam e associam qual coluna do
+              arquivo representa o Eixo X (Este) e o Eixo Y (Norte).</td>
+            <td>Não importa a ordem das colunas no arquivo, o script faz a
+              leitura correta sem exigir edição prévia.</td>
+          </tr>
+          <tr>
+            <td><strong>📋 Filtro de Cabeçalho</strong></td>
+            <td>Caixa de seleção para ignorar a primeira linha do arquivo de
+              forma opcional.</td>
+            <td>Evita erros fatais de leitura gerados por títulos textuais de
+              colunas.</td>
+          </tr>
+          <tr>
+            <td><strong>👁️ Pré-visualização Interna</strong></td>
+            <td>Exibição em tempo real das primeiras 5 linhas da planilha dentro
+              de uma caixa de listagem (<strong>Listbox</strong>) no diálogo de
+              importação.</td>
+            <td>O operador visualiza a estrutura do arquivo antes de autorizar o
+              processamento dos dados.</td>
+          </tr>
+          <tr>
+            <td><strong>🔍 Zoom Automático</strong></td>
+            <td>Enquadramento espacial automático aplicado imediatamente após a
+              importação e desenho dos pontos.</td>
+            <td>Elimina a necessidade de localizar manualmente a geometria
+              importada quando esta estiver distante na tela.</td>
+          </tr>
+          <tr>
+            <td><strong>✏️ Comandos Avulsos</strong></td>
+            <td>Botões para inserção de Vértice (<strong>ARKZVTX</strong>) ou
+              Azimute (<strong>ARKZAZI</strong>) de forma independente, sem
+              processar toda a polilinha.</td>
+            <td>Permite anotações pontuais em trabalhos de detalhamento e
+              correção.</td>
+          </tr>
+          <tr>
+            <td><strong>📐 Suporte a Curvas (Bulges)</strong></td>
+            <td>Detecção automática de curvas em polilinhas através da
+              propriedade <code>Bulge</code>. Cálculo de Raio, Desenvolvimento,
+              Tangente e Ângulo Central.</td>
+            <td>Tabela exibe "R=XX,XXm" para segmentos curvos e o memorial
+              inclui os parâmetros da curva, garantindo precisão topográfica.</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>🧠 Inteligência de Geometria e Trava de Segurança</h2>
+      <div class="features-grid">
+        <div class="feature-item"> <strong>🎯 Navegação Visual com TAB/Setas:</strong><br>
+          O DCL é ocultado e o usuário navega pelos vértices com destaque <em>grdraw</em>
+          vermelho. Pressione <strong>TAB</strong> ou <strong>→/↑</strong>
+          para avançar, <strong>←/↓</strong> para voltar e <strong>ENTER</strong>
+          para confirmar. </div>
+        <div class="feature-item"> <strong>🔄 Inversão de Sentido:</strong><br>
+          Botão "Inverter" no DCL para inverter a ordem dos vértices (sentido
+          anti-horário), permitindo adequação às normas técnicas. </div>
+        <div class="feature-item"> <strong>📐 Verificação de Fecho:</strong><br>
+          Detecta automaticamente se a polilinha está fechada (Closed = Yes) e
+          oferece fechamento automático com confirmação interativa. </div>
+        <div class="feature-item"> <strong>📐 Detecção de Curvas:</strong><br>
+          Identifica automaticamente segmentos curvos (bulge ≠ 0) e calcula
+          Raio, Desenvolvimento e Tangente para exibição na tabela e memorial. </div>
+        <div class="feature-item"> <strong>🔒 Botão Avançar Inteligente:</strong><br>
+          A interface mantém o botão de conclusão travado até que um arquivo
+          válido seja carregado, mitigando erros por falta de dados. </div>
+        <div class="feature-item"> <strong>📦 Desenho Opcional:</strong><br>
+          Você escolhe se deseja que o script monte a polilinha interligando os
+          pontos ou se deseja apenas a tabela e as anotações UTM. </div>
+        <div class="feature-item"> <strong>📝 Memorial Descritivo Automático:</strong><br>
+          Gera o texto completo do Memorial (<strong>MText</strong> ou <strong>arquivo
+            TXT</strong>) já citando o Fuso, o Meridiano Central e o datum
+          SIRGAS 2000 configurados pela cidade selecionada ou detectados do
+          Civil 3D. </div>
+        <div class="feature-item"> <strong>📤 Exportação CSV:</strong><br>
+          Exporta a tabela de coordenadas para arquivo CSV estruturado,
+          facilitando a integração com outros sistemas. </div>
+        <div class="feature-item"> <strong>🌍 Detecção Civil 3D:</strong><br>
+          Leitura automática do sistema de coordenadas do desenho via variável <code>CGEOCS</code>,
+          sem necessidade de intervenção do usuário. </div>
+        <div class="feature-item"> <strong>🔧 Comandos de Lote:</strong><br>
+          <strong>ARKZFECHAR</strong> fecha polilinhas selecionadas em lote. <strong>ARKZVERIFICAR</strong>
+          lista polilinhas abertas no desenho. </div>
+      </div>
+      <div class="note-box"> <strong>🔒 Preservação do Ambiente ASCII:</strong><br>
+        Toda a codificação foi mantida sob estrito padrão ASCII internacional.
+        Isso previne falhas de renderização de strings e caracteres estranhos no
+        console de comandos do AutoCAD, garantindo estabilidade máxima. </div>
+      <div class="note-box" style="background: #fef3c7; border-color: #f59e0b;">
+        <strong>🚀 Novidades da Versão 2.0.0:</strong><br>
+        ✅ Navegação por vértices com TAB/Setas e destaque grdraw<br>
+        ✅ Definição de V1 e inversão de sentido com botão "Inverter"<br>
+        ✅ Detecção automática Civil 3D via CGEOCS<br>
+        ✅ Verificação e fechamento automático de polilinhas com confirmação
+        interativa<br>
+        ✅ Exportação CSV da tabela de coordenadas<br>
+        ✅ MLEADER para anotação de vértices<br>
+        ✅ Suporte completo a curvas (bulges) com cálculo de raio e
+        desenvolvimento<br>
+        ✅ Exportação de Memorial Descritivo em arquivo TXT<br>
+        ✅ Pré-visualização de CSV no diálogo de importação<br>
+        ✅ Comandos ARKZFECHAR e ARKZVERIFICAR para lote<br>
+        ✅ Otimização de performance com REGENMODE e CMDECHO </div>
+      <h2>📋 Lista de Comandos Disponíveis</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Comando</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>ARKZLINELABEL</code></td>
+            <td>Executa o programa principal com navegação de vértices</td>
+          </tr>
+          <tr>
+            <td><code>ARKZCONFIG</code></td>
+            <td>Configura automaticamente o ambiente (estilos, camadas, etc.)</td>
+          </tr>
+          <tr>
+            <td><code>ARKZSAVEZONE</code></td>
+            <td>Salva a zona UTM no dicionário do desenho</td>
+          </tr>
+          <tr>
+            <td><code>SELECTCITY</code></td>
+            <td>Seleciona cidade e calcula o fuso UTM</td>
+          </tr>
+          <tr>
+            <td><code>ARKZVTX</code></td>
+            <td>Insere um vértice avulso (MLEADER)</td>
+          </tr>
+          <tr>
+            <td><code>ARKZAZI</code></td>
+            <td>Insere um azimute avulso</td>
+          </tr>
+          <tr>
+            <td><code>ARKZTESTCSV</code></td>
+            <td>Testa o carregamento da base de cidades</td>
+          </tr>
+          <tr>
+            <td><code>ARKZFECHAR</code></td>
+            <td>Fecha polilinhas selecionadas em lote</td>
+          </tr>
+          <tr>
+            <td><code>ARKZVERIFICAR</code></td>
+            <td>Verifica e lista polilinhas abertas no desenho</td>
+          </tr>
+          <tr>
+            <td><code>ARKZDEBUGBULGE</code></td>
+            <td>Depura bulges da polilinha selecionada (diagnóstico)</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr style="border: none; height: 1px; background: #e2e8f0; margin: 2rem 0;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; color: #64748b; font-size: 0.9rem;">
+        <span>© ARK-Z ARQUITETURA LTDA — Soluções CAD e Engenharia de
+          Infraestrutura</span> <span>Versão 2.0.0 (Setembro 2026)</span> </div>
+      <!-- ============================================ -->
+      <!-- LICENÇA MIT                                  -->
+      <!-- ============================================ -->
+      <hr style="border: none; height: 2px; background: linear-gradient(90deg, #b3cde0, transparent); margin: 2rem 0;">
+      <div style="background: #f1f5f9; border-radius: 16px; padding: 1.5rem 2rem; margin: 1.5rem 0; border-left: 6px solid #0f172a;">
+        <h3 style="margin-top: 0; border-bottom: none; color: #0f172a;">📄
+          Licença MIT</h3>
+        <p style="background: transparent; padding: 0; border: none; font-size: 0.92rem; color: #1e293b; font-family: 'Courier New', monospace; white-space: pre-wrap; word-break: break-word;">
+MIT License
+
+Copyright (c) 2026 ARK-Z ARQUITETURA LTDA - Ezequiel M. Rezende
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+        </p>
+        <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #475569;"> <strong>ARK-Z
+            ARQUITETURA LTDA</strong> · Ezequiel M. Rezende · Versão 2.0.0 </div>
+      </div>
+    </div>
+  </body>
+</html>

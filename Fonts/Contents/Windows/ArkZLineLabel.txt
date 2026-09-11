@@ -1,0 +1,97 @@
+PADRONIZACAO DE MENU PARA O AUTOCAD
+ARK-Z ARQUITETURA
+-----------------------------------------------------------
+ArkZLineLabel - Versao 2.0
+-----------------------------------------------------------
+
+1. DESCRICAO GERAL
+------------------
+A rotina ArkZLineLabel e uma ferramenta de automacao topografica para AutoCAD.
+O objetivo principal e extrair e processar dados geometricos para geracao automatica de anotacoes de vertices (N/E) via Multileaders, rotulos de azimute/distancia, tabelas nativas de coordenadas UTM e Memorial Descritivo (MText e/ou TXT).
+
+O programa opera em dois modos distintos:
+  1. Selecao de poligonal existente diretamente na tela do desenho.
+  2. Importacao automatizada de dados brutos de arquivos de texto/planilhas CSV com enquadramento automatico de zoom nos limites da regiao importada.
+
+
+2. NOVIDADES DA VERSAO 2.0 (SISTEMA UTM / SIRGAS 2000)
+-------------------------------------------------------
+- SELECAO DE CIDADE: A rotina agora possui um banco de dados interno (SelectCity.csv) com cidades e coordenadas. 
+- CALCULO AUTOMATICO DE FUSO E MERIDIANO: Ao selecionar um Estado e uma Cidade, o programa calcula automaticamente o Fuso UTM (Ex: 19S) e o Meridiano Central (Ex: 69°00' W) usando a formula matematica oficial da Projecao UTM.
+- PADRAO SIRGAS 2000: O texto do Memorial Descritivo gerado automaticamente ja informa que as coordenadas estao georreferenciadas ao Sistema Geodesico Brasileiro e representadas no Sistema UTM, referenciadas ao datum SIRGAS 2000.
+- PRECISAO GARANTIDA: O calculo e feito por formula matematica (e nao por tabelas manuais), garantindo que cidades em divisas de fusos (como Rio Branco/AC) recebam o Fuso e o Meridiano corretos.
+
+
+3. COMO EXECUTAR A ROTINA
+-------------------------
+1. Carregue o arquivo LISP no AutoCAD utilizando o comando APPLOAD.
+2. Certifique-se de que os arquivos "ArkZLineLabel.dcl" e "SelectCity.csv" estejam no mesmo diretorio do arquivo ".lsp".
+3. Digite o comando na linha de comando do AutoCAD: ArkZLineLabel
+4. Escolha o modo de operacao no topo da tela principal.
+
+
+4. INTERFACE PRINCIPAL (DIALOGO)
+--------------------------------
+- MODO DE OPERACAO:
+  * "Selecionar poligonal existente no desenho": Permite escolher polilinhas/arcos desenhados no CAD para calcular suas areas, vertices e azimutes.
+  * "Importar pontos de arquivo CSV": Ativa o painel auxiliar para leitura de planilhas de coordenadas.
+
+- ELEMENTOS A INSERIR (Toggles):
+  * VERTICES: Insere anotacoes com coordenadas N/E em cada vertice (Multileaders).
+  * AZIMUTES: Insere anotacoes de distancia e azimute no meio de cada segmento.
+  * TABELA: Gera uma tabela nativa do AutoCAD com Vertice, Norte, Este, Azimute/Raio e Distancia.
+  * MEMORIAL MTEXT: Cria um texto multilinhas (MText) com a descricao completa do perimetro no proprio desenho.
+  * MEMORIAL TXT: Permite exportar o Memorial Descritivo em arquivo ".txt".
+
+- SISTEMA UTM:
+  * Exibe o Fuso (Ex: 23S) e o Meridiano (Ex: 45°00' W) selecionados.
+  * Botao "Selecionar Cidade...": Abre um dialogo para buscar automaticamente o Fuso e o Meridiano corretos baseado na cidade do projeto.
+
+- DADOS DO IMOVEL:
+  * Descricao: Nome do lote, quadra ou empreendimento (utilizado como titulo da tabela e do memorial).
+  * Municipio: Informado automaticamente ao selecionar a cidade no sistema UTM.
+
+
+5. FLUXO DE IMPORTACAO CSV (PAINEL AUXILIAR)
+--------------------------------------------
+A) SELECAO DO ARQUIVO: Botao "Procurar..." para localizar o arquivo (.csv ou .txt).
+B) CONFIGURACAO DO SEPARADOR: Virgula (,), Ponto e Virgula (;) ou Tabulacao (Tab).
+C) IGNORAR CABECALHO: Opcao para pular a primeira linha se ela contiver titulos.
+D) MAPEAMENTO DE COLUNAS: Escolha exatamente quais colunas do arquivo correspondem as coordenadas Este (X) e Norte (Y).
+E) PRE-VISUALIZACAO: Exibe as primeiras 5 linhas do arquivo para conferencia antes de processar.
+F) APOS PROCESSAR: O script gera a polilinha (se marcado), insere as anotacoes, cria a tabela e da Zoom Extents automaticamente na area importada.
+
+
+6. SELECAO DE CIDADE E CALCULO UTM
+----------------------------------
+Ao clicar em "Selecionar Cidade...", o usuario escolhe o Estado e a Cidade no popup. O sistema exibe automaticamente:
+- O Codigo IBGE.
+- A Latitude e Longitude da cidade.
+- O Fuso UTM (Ex: 19S).
+- O Meridiano Central (Ex: 69°00' W).
+
+Este processo garante que o texto do Memorial Descritivo e as configuracoes do desenho estejam de acordo com o sistema de coordenadas oficial utilizado no Brasil (SIRGAS 2000).
+
+
+7. REQUISITOS TECNICOS E COMPATIBILIDADE
+----------------------------------------
+- O script altera temporariamente as variaveis de sistema ANGBASE e ANGDIR para calculo do Azimute topografico (Sentido horario, com origem no Norte), restaurando os valores originais ao fim do comando.
+- A variavel DIMZIN e configurada como 0 para forcar a exibicao de zeros a direita conforme a precisao decimal parametrizada.
+- Os textos utilizam o estilo "TGDdim" e fonte Arial para evitar quebras de codificacao ou fontes ausentes na plotagem.
+- O arquivo "SelectCity.csv" deve estar na mesma pasta do LISP para que a selecao automatica de cidades funcione corretamente.
+
+8. LICENSA
+----------
+Este projeto está licenciado sob a Licença MIT - consulte o texto abaixo para obter detalhes:
+
+MIT License
+
+Copyright (c) 2026 - Ark-Z Arquitetura Ltda - Ezequiel M. Rezende
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+  
