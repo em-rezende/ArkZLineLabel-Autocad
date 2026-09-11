@@ -4,7 +4,8 @@
 
 **Rotulagem, Tabelas e Georreferenciamento UTM para AutoCAD/Civil 3D**
 
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/arkz/ArkZLineLabel)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases)
+[![Download](https://img.shields.io/badge/download-Instalador%20.exe-success.svg)](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases/latest/download/ArkZLineLabel_Setup.exe)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![AutoCAD](https://img.shields.io/badge/AutoCAD-2020%2B-red.svg)](https://www.autodesk.com)
 [![Civil 3D](https://img.shields.io/badge/Civil%203D-2020%2B-orange.svg)](https://www.autodesk.com)
@@ -17,8 +18,9 @@
 
 - [Sobre](#sobre)
 - [Funcionalidades](#funcionalidades)
-- [Novidades da Versão 2.0.0](#novidades-da-versão-230)
+- [Novidades da Versão 2.0.0](#novidades-da-versão-200)
 - [Requisitos](#requisitos)
+- [Download](#download)
 - [Instalação](#instalação)
 - [Como Usar](#como-usar)
 - [Comandos Disponíveis](#comandos-disponíveis)
@@ -155,6 +157,21 @@ O alerta de confirmação exibe:
 
 ---
 
+## Download
+
+O instalador é publicado como **release** deste repositório — o arquivo `.exe` não é versionado no Git.
+
+| Versão | Build | Arquivo | Link |
+|--------|-------|---------|------|
+| **2.0.0** | 260911 | `ArkZLineLabel_Setup.exe` | [⬇ Baixar o instalador](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases/latest/download/ArkZLineLabel_Setup.exe) |
+
+- 📄 **Todas as versões:** [Releases](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases)
+- 🔒 **O link acima é permanente:** aponta sempre para o instalador da release mais recente.
+- 🏷️ Para baixar uma versão específica, use a página da release, ex.: [v2.0.0](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases/tag/v2.0.0).
+- 🧾 **Integridade:** cada release traz o arquivo `SHA256SUMS.txt` com o hash do instalador para conferência.
+
+---
+
 ## Requisitos
 
 - **AutoCAD** 2020 ou superior (incluindo versões com suporte a LISP)
@@ -171,20 +188,20 @@ O alerta de confirmação exibe:
 
 ## Instalação
 
-### 1. Baixe os arquivos
+### 1. Baixe o projeto
 
-Clone este repositório ou baixe os arquivos:
+Para instalar, baixe o instalador na seção [Download](#download). Para obter o código-fonte:
 
 ```bash
-git clone https://github.com/arkz/ArkZLineLabel.git
+git clone https://github.com/em-rezende/ArkZLineLabel-Autocad.git
 ```
 
 ### 2. Execute o instalador
 
-O pacote inclui um instalador InnoSetup:
+O instalador InnoSetup é distribuído pela página de [Releases](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases):
 
-1. Navegue até a pasta `output/`
-2. Execute o arquivo `ArkZLineLabel_v_260909_Setup.exe` como Administrador
+1. Baixe o arquivo `ArkZLineLabel_Setup.exe`
+2. Clique com o botão direito e escolha **Executar como administrador**
 3. Siga as instruções do instalador
 
 O plugin será instalado em:
@@ -311,7 +328,7 @@ Especifique a posição da tabela e do memorial
 
 ```
 ArkZLineLabel/
-├── fonts/                                    # Fonte da interface
+├── Fonts/                                    # Fonte da interface (bundle AutoCAD)
 │   ├── Contents/
 │   │   ├── Resources/
 │   │   │   ├── Ark-Z.ico                      # Ícone do programa
@@ -328,13 +345,12 @@ ArkZLineLabel/
 │   │       ├── ArkZLineLabel.lsp              # Código principal AutoLISP
 │   │       ├── ArkZLineLabel.slb              # Biblioteca de slides (logo)
 │   │       └── ArkZLineLabel.txt              # Arquivo de ajuda
-│   ├── Install ArkZLineLabel.iss              # Script de instalação InnoSetup
 │   └── PackageContents.xml                    # Manifesto do bundle AutoCAD
 │
-├── output/
-│   └── ArkZLineLabel_v_260909_Setup.exe       # Instalador executável
+├── Output/                                    # Saída de compilação (não versionada - ver Releases)
+│   └── ArkZLineLabel_v_260911_Setup.exe       # Instalador gerado e anexado à release v2.0.0
 │
-├── support/
+├── Support/
 │   ├── Ark-Z.ico                              # Ícone do programa
 │   ├── ArkZ_large.bmp                         # Imagem grande para CUIx
 │   └── ArkZ_small.bmp                         # Imagem pequena para CUIx
@@ -342,8 +358,8 @@ ArkZLineLabel/
 ├── Install ArkZLineLabel.iss                  # Script de instalação InnoSetup
 ├── Instrucoes.txt                             # Instruções de instalação
 ├── LICENSE                                    # Licença MIT
-├── Lista.txt                                  # Lista de arquivos do pacote
-└── README.MD                                  # Este arquivo
+├── README.MD                                  # Este arquivo
+└── .gitignore                                 # Arquivos ignorados pelo Git (saída de compilação, etc.)
 ```
 
 ---
@@ -425,10 +441,11 @@ Contribuições são bem-vindas! Para contribuir:
 | Item | Alteração |
 |------|-----------|
 | **Funcionalidades** | Adicionado suporte a curvas (bulges), fechamento automático interativo, exportação TXT, pré-visualização CSV |
-| **Novidades v2.3.0** | Adicionados itens: Suporte a Curvas, Exportação TXT, Pré-visualização CSV, Comandos em Lote |
+| **Novidades v2.0.0** | Adicionados itens: Suporte a Curvas, Exportação TXT, Pré-visualização CSV, Comandos em Lote |
 | **Comandos Disponíveis** | Adicionados: `ARKZVERIFICAR` e `ARKZDEBUGBULGE` |
-| **Estrutura do Projeto** | Refletida a estrutura real de pastas fornecida (`fonts/`, `output/`, `support/`, etc.) |
-| **Instalação** | Adicionado método via instalador InnoSetup (`.exe`) |
+| **Distribuição** | Instalador InnoSetup (`.exe`) publicado como **GitHub Release** (não versionado no Git) |
+| **Estrutura do Projeto** | Refletida a estrutura real do repositório (`Fonts/`, `Output/`, `Support/`, etc.) |
+| **Instalação** | Download pela página de Releases + instalação manual alternativa |
 | **Detalhes Técnicos** | Especificado que a tabela exibe "R=XX,XXm" para curvas |
 | **Licença** | Mantida MIT com créditos atualizados |
 | **Contato** | Atualizado com email e website reais |

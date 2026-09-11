@@ -22,3 +22,7 @@ obj/
 
 # Pasta de trabalho/desenvolvimento local (nao versionada)
 Desenvolvimento/
+
+# Saida de compilacao (instaladores sao distribuidos via GitHub Releases)
+Output/*.exe
+
