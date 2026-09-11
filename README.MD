@@ -385,7 +385,7 @@ SOFTWARE.
 - **Desenvolvedor:** Ezequiel M. Rezende
 - **Versão:** 2.0.0
 - **Data:** Setembro 2026
-- **Website:** [https://arkz.duckdns.org](https://arkz.duckdns.org)
+- **Website:** [https://em-rezende.github.io/Ark-Z-Arquitetura.github.io/](https://em-rezende.github.io/Ark-Z-Arquitetura.github.io/)
 - **Email:** emrezende@gmail.com
 
 ---
