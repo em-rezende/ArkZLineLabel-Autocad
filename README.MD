@@ -4,15 +4,15 @@
 
 **Rotulagem, Tabelas e Georreferenciamento UTM para AutoCAD/Civil 3D**
 
-![Platform](https://img.shields.io/badge/Platform-AutoCAD-da2b1d.svg?style=for-the-badge)
+<!-- Plataforma e compatibilidade -->
+[![Platform](https://img.shields.io/badge/Platform-AutoCAD-da2b1d.svg?style=for-the-badge)](https://www.autodesk.com)
 [![Civil 3D](https://img.shields.io/badge/Civil%203D-2020%2B-orange.svg?style=for-the-badge)](https://www.autodesk.com)
 
-![Language](https://img.shields.io/badge/AutoLISP%20%2B%20DCL-1a7f37.svg)
-![License](https://img.shields.io/badge/License-GPLv3-blue.svg)
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases)
-[![Download](https://img.shields.io/badge/download-Instalador%20.exe-success.svg)](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases/latest/download/ArkZLineLabel_Setup.exe)
-
-
+<!-- Informações do projeto -->
+![Language](https://img.shields.io/badge/AutoLISP%20%2B%20DCL-1a7f37.svg?style=for-the-badge)
+[![License](https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge)](LICENSE)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg?style=for-the-badge)](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases)
+[![Download](https://img.shields.io/badge/download-Instalador%20.exe-success.svg?style=for-the-badge)](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases/latest/download/ArkZLineLabel_Setup.exe)
 
 </div>
 
