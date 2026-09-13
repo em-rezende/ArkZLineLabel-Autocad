@@ -3910,8 +3910,8 @@
           ;; Preenche dados do registro
           (setq reg1 "ARK-Z ARQUITETURA")
           (setq reg2 "Aplicativos para o Autocad 2013 - 2026")
-          (setq reg3 "ArkZLineLabel - Licensa MIT © 2026 Ezequiel M Rezende")
-          (setq reg4 "https://em-rezende.github.io/Ark-Z-Arquitetura.github.io/")
+          (setq reg3 "ArkZLineLabel - License GNU GPLv3 © 2026 Ezequiel M Rezende")
+          (setq reg4 "https://em-rezende.github.io/")
           (setq regdat (strcat reg1 "\n" reg2 "\n" reg3 "\n" reg4))
           (set_tile "reg_dat" regdat)
 		  

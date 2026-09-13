@@ -2,7 +2,7 @@
 ; Gerado para Inno Setup
 
 #define MyAppName "ArkZ LineLabel"
-#define MyAppVersion "260911"
+#define MyAppVersion "260912"
 #define MyAppPublisher "ARK-Z ARQUITETURA"
 #define MyAppURL "https://arkz.duckdns.org"
 

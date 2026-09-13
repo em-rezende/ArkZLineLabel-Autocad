@@ -4,11 +4,15 @@
 
 **Rotulagem, Tabelas e Georreferenciamento UTM para AutoCAD/Civil 3D**
 
+![Platform](https://img.shields.io/badge/Platform-AutoCAD-da2b1d.svg?style=for-the-badge)
+[![Civil 3D](https://img.shields.io/badge/Civil%203D-2020%2B-orange.svg?style=for-the-badge)](https://www.autodesk.com)
+
+![Language](https://img.shields.io/badge/AutoLISP%20%2B%20DCL-1a7f37.svg)
+![License](https://img.shields.io/badge/License-GPLv3-blue.svg)
 [![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases)
 [![Download](https://img.shields.io/badge/download-Instalador%20.exe-success.svg)](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases/latest/download/ArkZLineLabel_Setup.exe)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![AutoCAD](https://img.shields.io/badge/AutoCAD-2020%2B-red.svg)](https://www.autodesk.com)
-[![Civil 3D](https://img.shields.io/badge/Civil%203D-2020%2B-orange.svg)](https://www.autodesk.com)
+
+
 
 </div>
 
@@ -357,7 +361,7 @@ ArkZLineLabel/
 │
 ├── Install ArkZLineLabel.iss                  # Script de instalação InnoSetup
 ├── Instrucoes.txt                             # Instruções de instalação
-├── LICENSE                                    # Licença MIT
+├── LICENSE                                    # Licença GNU GPLv3
 ├── README.MD                                  # Este arquivo
 └── .gitignore                                 # Arquivos ignorados pelo Git (saída de compilação, etc.)
 ```
@@ -366,31 +370,7 @@ ArkZLineLabel/
 
 ## Licença
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-```
-MIT License
-
-Copyright (c) 2026 ARK-Z ARQUITETURA LTDA - Ezequiel M. Rezende
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+Este projeto está licenciado sob a Licença GNU GPLv3 - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ---
 
