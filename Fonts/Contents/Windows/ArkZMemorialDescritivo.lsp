@@ -98,9 +98,9 @@
     )
 	
     (mode_tile "#arkz" 1)
-    (show-slide "#img_logo" "ArkZMemorialDescritivo" "ArkZLogo" -2)
-    (show-slide "sep1" "ArkZMemorialDescritivo" "Separato" -2)
-    (show-slide "sep2" "ArkZMemorialDescritivo" "Separato" -2)
+    (MD_ShowSld "#img_logo" "ArkZMemorialDescritivo" "ArkZLogo" -2)
+    (MD_ShowSld "sep1" "ArkZMemorialDescritivo" "Separato" -2)
+    (MD_ShowSld "sep2" "ArkZMemorialDescritivo" "Separato" -2)
 
     ;; Preencher campos do DCL
     (set_tile "eb_nome_lote"   *ArkZ_NomeLote*)
@@ -568,9 +568,9 @@
 )
 
 ;;;===========================================================================
-;;; FUNÇÃO: show-slide
+;;; FUNÇÃO: MD_ShowSld
 ;;;===========================================================================
-(defun show-slide (tile library slide color / x y)
+(defun MD_ShowSld (tile library slide color / x y)
   (and
     (setq x (dimx_tile tile))
     (setq y (dimy_tile tile))
@@ -2631,9 +2631,9 @@
     )
 	
     (mode_tile "#arkz" 1)
-    (show-slide "#img_logo" "ArkZMemorialDescritivo" "ArkZLogo" -2)
-    (show-slide "sep1" "ArkZMemorialDescritivo" "Separato" -2)
-    (show-slide "sep2" "ArkZMemorialDescritivo" "Separato" -2)
+    (MD_ShowSld "#img_logo" "ArkZMemorialDescritivo" "ArkZLogo" -2)
+    (MD_ShowSld "sep1" "ArkZMemorialDescritivo" "Separato" -2)
+    (MD_ShowSld "sep2" "ArkZMemorialDescritivo" "Separato" -2)
 
     ;; Preencher campos do DCL
     (set_tile "eb_nome_lote"   *ArkZ_NomeLote*)
@@ -3816,6 +3816,7 @@
   (princ)
 )
 
+
 ;;;===========================================================================
 ;;; FUNÇÃO DE AJUDA
 ;;;===========================================================================
@@ -3868,21 +3869,33 @@
 )
 
 ;;;---------------------------------------------------------------------------
-;;; Função ArkZMemorialDescritivo_Help
-(defun ArkZMemorialDescritivo_Help (/ dcl_id lines display-text)
-  ;; Verifica existência do arquivo ArkZMemorialDescritivo.txt
-  (if (not (findfile "ArkZMemorialDescritivo.txt"))
+;;; Função ArkZMemorialDescritivo_Help (CORRIGIDA PARA BUSCAR NO DIRETÓRIO DO DCL)
+(defun ArkZMemorialDescritivo_Help (/ dcl_id lines display-text txt_path dcl_path)
+  
+  ;; 1. Tenta encontrar o DCL para saber onde estamos
+  (setq dcl_path (findfile "ArkZMemorialDescritivo.dcl"))
+  
+  ;; 2. Define o caminho do TXT baseado no caminho do DCL
+  (if dcl_path
+    (setq txt_path (strcat (vl-filename-directory dcl_path) "\\ArkZMemorialDescritivo.txt"))
+    (setq txt_path "ArkZMemorialDescritivo.txt") ; Fallback para o Support Path
+  )
+
+  ;; 3. Verifica se o arquivo TXT existe no caminho definido
+  (if (not (findfile txt_path))
     (progn
-      (alert "O arquivo ArkZMemorialDescritivo.txt não foi encontrado.\n\nO programa de ajuda não será apresentado.")
-      (princ)  ;; Retorna silenciosamente sem abrir o DCL
+      (alert (strcat "O arquivo ArkZMemorialDescritivo.txt não foi encontrado.\n\n"
+                     "Caminho procurado: " txt_path "\n\n"
+                     "Certifique-se de que o arquivo .txt está na mesma pasta do .dcl."))
+      (princ)
     )
     (progn
       ;; Arquivo existe, prossegue com a abertura do diálogo
       (if (and (setq dcl_id (load_dialog "ArkZMemorialDescritivo.dcl"))
                (new_dialog "ArkZMemorialDescritivo_Help" dcl_id))
         (progn
-          ;; Carrega e exibe o texto do arquivo de ajuda
-          (if (setq lines (read-lines "ArkZMemorialDescritivo.txt"))
+          ;; Carrega e exibe o texto do arquivo de ajuda usando o caminho completo
+          (if (setq lines (read-lines txt_path))
             (progn
               (setq display-text (process-text-for-display lines 60))
               (start_list "lstAbout")
@@ -3891,7 +3904,7 @@
               )
               (end_list)
             )
-            ;; Se não conseguir ler o arquivo (mesmo existindo)
+            ;; Se não conseguir ler o arquivo
             (progn
               (start_list "lstAbout")
               (foreach line '("Erro ao ler o arquivo de ajuda." 
@@ -3905,16 +3918,16 @@
           )
           
           ;; Exibe logo
-          (show-slide "#img_logo" "ArkZMemorialDescritivo" "ArkZLogo" -2)
+          (MD_ShowSld "#img_logo" "ArkZMemorialDescritivo" "ArkZLogo" -2)
           
           ;; Preenche dados do registro
           (setq reg1 "ARK-Z ARQUITETURA")
           (setq reg2 "Aplicativos para o Autocad 2013 - 2026")
-          (setq reg3 "ArkZMemorialDescritivo - License GNU GPLv3 © 2026 Ezequiel M Rezende")
+          (setq reg3 "License GNU GPLv3 © 2026 Ezequiel M Rezende")
           (setq reg4 "https://em-rezende.github.io/")
           (setq regdat (strcat reg1 "\n" reg2 "\n" reg3 "\n" reg4))
           (set_tile "reg_dat" regdat)
-		  
+          
           ;; Define ação do botão OK
           (action_tile "btnOK" "(done_dialog 1)")
           
@@ -3928,6 +3941,7 @@
   )
   (princ)
 )
+
 ;;;===========================================================================
 ;;; COMANDO: ArkZTestCSV - Testar leitura do CSV
 ;;;===========================================================================
