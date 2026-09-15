@@ -1,8 +1,8 @@
-; Script de Instalacao do ArkZLineLabel
+; Script de Instalacao do ArkZMemorialDescritivo
 ; Gerado para Inno Setup
 
-#define MyAppName "ArkZ LineLabel"
-#define MyAppVersion "260912"
+#define MyAppName "ArkZ Memorial Descritivo"
+#define MyAppVersion "260915"
 #define MyAppPublisher "ARK-Z ARQUITETURA"
 #define MyAppURL "https://arkz.duckdns.org"
 
@@ -14,12 +14,12 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
-DefaultDirName={autopf}\Autodesk\ApplicationPlugins\ArkZLineLabel.bundle
-DefaultGroupName=ARK-Z\ArkZLineLabel
+DefaultDirName={autopf}\Autodesk\ApplicationPlugins\ArkZMemorialDescritivo.bundle
+DefaultGroupName=ARK-Z\ArkZMemorialDescritivo
 AllowNoIcons=yes
 PrivilegesRequired=admin
 OutputDir=.\Output
-OutputBaseFilename=ArkZLineLabel_v_{#MyAppVersion}_Setup
+OutputBaseFilename=ArkZMemorialDescritivo_v_{#MyAppVersion}_Setup
 SetupIconFile=.\support\Ark-Z.ico
 Compression=lzma
 SolidCompression=yes
@@ -40,16 +40,16 @@ Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortugue
 ; ============================================================
 ; IMPORTANTE: o parametro Excludes evita que arquivos que NAO fazem parte
 ; do pacote sejam embutidos pelo curinga ".\Fonts\*" com recursesubdirs.
-; Sem ele o proprio script (Fonts\Install ArkZLineLabel.iss) era copiado
+; Sem ele o proprio script (Fonts\Install ArkZMemorialDescritivo.iss) era copiado
 ; para dentro do bundle instalado.
-Source: ".\Fonts\*"; DestDir: "{autopf}\Autodesk\ApplicationPlugins\ArkZLineLabel.bundle\"; Excludes: "*.iss,.gitignore,.git*,*.bak"; Flags: ignoreversion recursesubdirs
-Source: "README.MD"; DestDir: "{autopf}\Autodesk\ApplicationPlugins\ArkZLineLabel.bundle\"; Flags: ignoreversion recursesubdirs
-Source: "LICENSE"; DestDir: "{autopf}\Autodesk\ApplicationPlugins\ArkZLineLabel.bundle\"; Flags: ignoreversion recursesubdirs
-Source: "Instrucoes.txt"; DestDir: "{autopf}\Autodesk\ApplicationPlugins\ArkZLineLabel.bundle\"; Flags: ignoreversion recursesubdirs
+Source: ".\Fonts\*"; DestDir: "{autopf}\Autodesk\ApplicationPlugins\ArkZMemorialDescritivo.bundle\"; Excludes: "*.iss,.gitignore,.git*,*.bak"; Flags: ignoreversion recursesubdirs
+Source: "README.MD"; DestDir: "{autopf}\Autodesk\ApplicationPlugins\ArkZMemorialDescritivo.bundle\"; Flags: ignoreversion recursesubdirs
+Source: "LICENSE"; DestDir: "{autopf}\Autodesk\ApplicationPlugins\ArkZMemorialDescritivo.bundle\"; Flags: ignoreversion recursesubdirs
+Source: "Instrucoes.txt"; DestDir: "{autopf}\Autodesk\ApplicationPlugins\ArkZMemorialDescritivo.bundle\"; Flags: ignoreversion recursesubdirs
 
 [UninstallDelete]
 ; ============================================================
-; REMOVE TODOS OS ARQUIVOS DO ARKZLINELABEL
+; REMOVE TODOS OS ARQUIVOS DO ArkZMemorialDescritivo
 ; ============================================================
 Type: filesandordirs; Name: "{app}"
 Type: filesandordirs; Name: "{group}"
@@ -117,16 +117,16 @@ begin
   if not IsAutoCADInstalled then
   begin
     MsgBox('ATENCAO: Nenhuma versao do AutoCAD foi encontrada neste computador.' + #13#10 +
-           'O ArkZLineLabel requer AutoCAD 2013 ou superior para funcionar.' + #13#10 + #13#10 +
+           'O Ark ZMemorial Descritivo requer AutoCAD 2013 ou superior para funcionar.' + #13#10 + #13#10 +
            'A instalacao continuara, mas o programa pode nao funcionar corretamente.',
            mbInformation, MB_OK);
   end;
 end;
 
 // ============================================================
-// FUNCAO DE LIMPEZA - REMOVE ARQUIVOS CUIX/MNR DO ArkZLineLabel
+// FUNCAO DE LIMPEZA - REMOVE ARQUIVOS CUIX/MNR DO ArkZMemorialDescritivo
 // ============================================================
-procedure DeleteArkZLineLabelFiles(const RootPath: string);
+procedure DeleteArkZMemorialDescritivoFiles(const RootPath: string);
 var
   FindRec: TFindRec;
   FilePath: string;
@@ -142,8 +142,8 @@ begin
           FileName := LowerCase(FindRec.Name);
           
           if FindRec.Attributes and FILE_ATTRIBUTE_DIRECTORY <> 0 then
-            DeleteArkZLineLabelFiles(FilePath)
-          else if (Pos('arkzlinelabel', FileName) > 0) and   // <<< CORRIGIDO: tudo minúsculo
+            DeleteArkZMemorialDescritivoFiles(FilePath)
+          else if (Pos('ArkZMemorialDescritivo', FileName) > 0) and   // <<< CORRIGIDO: tudo minúsculo
                   ((Pos('.cuix', FileName) > 0) or 
                    (Pos('.mnr', FileName) > 0)) then
             DeleteFile(FilePath);
@@ -175,7 +175,7 @@ begin
                      '\Autodesk\AutoCAD ' + Versions[i];
       
       if DirExists(SupportPath) then
-        DeleteArkZLineLabelFiles(SupportPath);
+        DeleteArkZMemorialDescritivoFiles(SupportPath);
     end;
   end;
 end;

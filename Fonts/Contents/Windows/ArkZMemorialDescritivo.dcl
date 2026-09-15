@@ -1,10 +1,10 @@
 //
-//  ArkZLineLabel.dcl
+//  ArkZMemorialDescritivo.dcl
 //  Version: 2.3 - Com Botões de Modo de Operação e Aplicar
 //
 
-ArkZLineLabel: dialog {
-    label = "ArkZLineLabel - Configurações";
+ArkZMemorialDescritivo: dialog {
+    label = "ArkZMemorialDescritivo - Configurações";
     fixed_height = true;
     alignment = centered;
     initial_focus = "accept";
@@ -354,7 +354,7 @@ SelectCity : dialog {
 // ----------------------------------------------------------------
 // Help Dialog
 // ----------------------------------------------------------------
-ArkZLineLabel_Help : dialog {
+ArkZMemorialDescritivo_Help : dialog {
     label = "Informações sobre Ark-Z Arquitetura";
     : image {
         key = "#img_logo";

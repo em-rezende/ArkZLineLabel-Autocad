@@ -1,4 +1,4 @@
-# ArkZLineLabel
+# ArkZMemorialDescritivo
 
 <div align="center">
 
@@ -11,8 +11,8 @@
 <!-- Informações do projeto -->
 ![Language](https://img.shields.io/badge/AutoLISP%20%2B%20DCL-1a7f37.svg?style=flat-square)
 [![License](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg?style=flat-square)](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases)
-[![Download](https://img.shields.io/badge/download-Instalador%20.exe-success.svg?style=flat-square)](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases/latest/download/ArkZLineLabel_Setup.exe)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg?style=flat-square)](https://github.com/em-rezende/Autocad-ArkZMemorialDescritivo/releases)
+[![Download](https://img.shields.io/badge/download-Instalador%20.exe-success.svg?style=flat-square)](https://github.com/em-rezende/Autocad-ArkZMemorialDescritivo/releases/latest/download/ArkZMemorialDescritivo_Setup.exe)
 
 </div>
 
@@ -36,7 +36,7 @@
 
 ## Sobre
 
-**ArkZLineLabel** é uma rotina profissional para AutoCAD e Civil 3D desenvolvida em AutoLISP que automatiza o processo de rotulagem, geração de tabelas UTM e memorial descritivo de polilinhas. O sistema permite:
+**ArkZMemorialDescritivo** é uma rotina profissional para AutoCAD e Civil 3D desenvolvida em AutoLISP que automatiza o processo de rotulagem, geração de tabelas UTM e memorial descritivo de polilinhas. O sistema permite:
 
 - ✅ Selecionar polilinhas existentes ou importar dados de arquivos CSV/TXT
 - ✅ Navegar visualmente pelos vértices com teclas TAB e Setas
@@ -50,13 +50,13 @@
 
 ## Interface Gráfica
 
-A interface do ArkZLineLabel foi projetada para ser intuitiva e eficiente, com todos os controles organizados em painéis lógicos. Abaixo estão as principais telas do sistema:
+A interface do ArkZMemorialDescritivo foi projetada para ser intuitiva e eficiente, com todos os controles organizados em painéis lógicos. Abaixo estão as principais telas do sistema:
 
 ### Figura 1: Interface Principal com Modo Seleção e Navegação de Vértices
 
-![Interface Principal](Fonts/Contents/Resources/ArkZLineLabel_01.png)
+![Interface Principal](Fonts/Contents/Resources/ArkZMemorialDescritivo_01.png)
 
-*Figura 1: Interface principal do ArkZLineLabel com destaque para o modo de seleção de polilinha, navegação de vértices (V1), opções de elementos a inserir e configurações de camadas, alturas de texto e precisão.*
+*Figura 1: Interface principal do ArkZMemorialDescritivo com destaque para o modo de seleção de polilinha, navegação de vértices (V1), opções de elementos a inserir e configurações de camadas, alturas de texto e precisão.*
 
 A tela principal exibe:
 - **Modo de Operação:** Selecionar poligonal existente ou importar CSV
@@ -70,7 +70,7 @@ A tela principal exibe:
 
 ### Figura 2: Módulo de Importação CSV com Pré-visualização
 
-![Módulo de Importação CSV](Fonts/Contents/Resources/ArkZLineLabel_02.png)
+![Módulo de Importação CSV](Fonts/Contents/Resources/ArkZMemorialDescritivo_02.png)
 
 *Figura 2: Diálogo dedicado à importação de arquivos CSV/TXT com pré-visualização das primeiras 5 linhas e opções de configuração.*
 
@@ -83,7 +83,7 @@ O módulo de importação CSV oferece:
 
 ### Figura 3: Seleção de Cidade e Cálculo Automático de Fuso UTM
 
-![Seleção de Cidade](Fonts/Contents/Resources/ArkZLineLabel_03.png)
+![Seleção de Cidade](Fonts/Contents/Resources/ArkZMemorialDescritivo_03.png)
 
 *Figura 3: Diálogo de seleção de cidade com base no banco de dados de municípios brasileiros (SIRGAS 2000) e cálculo automático do fuso UTM.*
 
@@ -96,7 +96,7 @@ A tela de seleção de cidade permite:
 
 ### Figura 4: Alerta de Confirmação dos Dados SIRGAS 2000
 
-![Alerta de Confirmação](Fonts/Contents/Resources/ArkZLineLabel_04.png)
+![Alerta de Confirmação](Fonts/Contents/Resources/ArkZMemorialDescritivo_04.png)
 
 *Figura 4: Alerta de confirmação exibido após a seleção da cidade, apresentando todos os dados calculados para validação do usuário.*
 
@@ -167,11 +167,11 @@ O instalador é publicado como **release** deste repositório — o arquivo `.ex
 
 | Versão | Build | Arquivo | Link |
 |--------|-------|---------|------|
-| **2.0.0** | 260911 | `ArkZLineLabel_Setup.exe` | [⬇ Baixar o instalador](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases/latest/download/ArkZLineLabel_Setup.exe) |
+| **2.0.0** | 260911 | `ArkZMemorialDescritivo_Setup.exe` | [⬇ Baixar o instalador](https://github.com/em-rezende/Autocad-ArkZMemorialDescritivo/releases/latest/download/ArkZMemorialDescritivo_Setup.exe) |
 
-- 📄 **Todas as versões:** [Releases](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases)
+- 📄 **Todas as versões:** [Releases](https://github.com/em-rezende/Autocad-ArkZMemorialDescritivo/releases)
 - 🔒 **O link acima é permanente:** aponta sempre para o instalador da release mais recente.
-- 🏷️ Para baixar uma versão específica, use a página da release, ex.: [v2.0.0](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases/tag/v2.0.0).
+- 🏷️ Para baixar uma versão específica, use a página da release, ex.: [v2.0.0](https://github.com/em-rezende/Autocad-ArkZMemorialDescritivo/releases/tag/v2.0.0).
 - 🧾 **Integridade:** cada release traz o arquivo `SHA256SUMS.txt` com o hash do instalador para conferência.
 
 ---
@@ -181,12 +181,12 @@ O instalador é publicado como **release** deste repositório — o arquivo `.ex
 - **AutoCAD** 2020 ou superior (incluindo versões com suporte a LISP)
 - **Civil 3D** 2020 ou superior (opcional, para detecção automática de zona)
 - **Arquivos de suporte:**
-  - `ArkZLineLabel.lsp` - Código principal
-  - `ArkZLineLabel.dcl` - Interface DCL
-  - `ArkZLineLabel.csv` - Base de dados de cidades (IBGE)
-  - `ArkZLineLabel.txt` - Arquivo de ajuda (opcional)
-  - `ArkZLineLabel.slb` - Biblioteca de slides (logo)
-  - `ArkZLineLabel.cuix` - Arquivo de personalização CUIx (opcional)
+  - `ArkZMemorialDescritivo.lsp` - Código principal
+  - `ArkZMemorialDescritivo.dcl` - Interface DCL
+  - `ArkZMemorialDescritivo.csv` - Base de dados de cidades (IBGE)
+  - `ArkZMemorialDescritivo.txt` - Arquivo de ajuda (opcional)
+  - `ArkZMemorialDescritivo.slb` - Biblioteca de slides (logo)
+  - `ArkZMemorialDescritivo.cuix` - Arquivo de personalização CUIx (opcional)
 
 ---
 
@@ -197,20 +197,20 @@ O instalador é publicado como **release** deste repositório — o arquivo `.ex
 Para instalar, baixe o instalador na seção [Download](#download). Para obter o código-fonte:
 
 ```bash
-git clone https://github.com/em-rezende/ArkZLineLabel-Autocad.git
+git clone https://github.com/em-rezende/Autocad-ArkZMemorialDescritivo.git
 ```
 
 ### 2. Execute o instalador
 
-O instalador InnoSetup é distribuído pela página de [Releases](https://github.com/em-rezende/ArkZLineLabel-Autocad/releases):
+O instalador InnoSetup é distribuído pela página de [Releases](https://github.com/em-rezende/Autocad-ArkZMemorialDescritivo/releases):
 
-1. Baixe o arquivo `ArkZLineLabel_Setup.exe`
+1. Baixe o arquivo `ArkZMemorialDescritivo_Setup.exe`
 2. Clique com o botão direito e escolha **Executar como administrador**
 3. Siga as instruções do instalador
 
 O plugin será instalado em:
 ```
-C:\Program Files\Autodesk\ApplicationPlugins\ArkZLineLabel.bundle\
+C:\Program Files\Autodesk\ApplicationPlugins\ArkZMemorialDescritivo.bundle\
 ```
 
 ### 3. Instalação Manual (Alternativa)
@@ -230,13 +230,13 @@ C:\Users\[SeuUsuário]\AppData\Roaming\Autodesk\AutoCAD 2026\R24.3\enu\Support\
 No AutoCAD, digite:
 
 ```lisp
-(load "ArkZLineLabel.lsp")
+(load "ArkZMemorialDescritivo.lsp")
 ```
 
 Ou adicione ao arquivo `acaddoc.lsp` para carregamento automático:
 
 ```lisp
-(if (findfile "ArkZLineLabel.lsp") (load "ArkZLineLabel.lsp"))
+(if (findfile "ArkZMemorialDescritivo.lsp") (load "ArkZMemorialDescritivo.lsp"))
 ```
 
 ---
@@ -248,7 +248,7 @@ Ou adicione ao arquivo `acaddoc.lsp` para carregamento automático:
 1. No AutoCAD, digite o comando:
 
 ```
-ARKZLINELABEL
+ArkZMemorialDescritivo
 ```
 
 2. Selecione uma polilinha existente ou importe um arquivo CSV
@@ -262,7 +262,7 @@ ARKZLINELABEL
 ### Fluxo de Trabalho
 
 ```
-ARKZLINELABEL
+ArkZMemorialDescritivo
    │
    ├── Modo Seleção
    │   ├── Selecionar Polilinha (botão)
@@ -283,7 +283,7 @@ ARKZLINELABEL
 1. **Selecione uma polilinha:**
 
 ```
-ARKZLINELABEL
+ArkZMemorialDescritivo
 Clique em "Selecionar Polilinha na Tela"
 Selecione a polilinha no desenho
 ```
@@ -315,7 +315,7 @@ Especifique a posição da tabela e do memorial
 
 | Comando | Descrição |
 |---------|-----------|
-| `ARKZLINELABEL` | Executa o programa principal com navegação de vértices |
+| `ArkZMemorialDescritivo` | Executa o programa principal com navegação de vértices |
 | `ARKZCONFIG` | Configura automaticamente o ambiente (estilos, camadas, etc.) |
 | `ARKZSAVEZONE` | Salva a zona UTM no dicionário do desenho |
 | `SELECTCITY` | Seleciona cidade e calcula o fuso UTM |
@@ -331,35 +331,38 @@ Especifique a posição da tabela e do memorial
 ## Estrutura do Projeto
 
 ```
-ArkZLineLabel/
+ArkZMemorialDescritivo/
 ├── Fonts/                                    # Fonte da interface (bundle AutoCAD)
 │   ├── Contents/
 │   │   ├── Resources/
 │   │   │   ├── Ark-Z.ico                      # Ícone do programa
-│   │   │   ├── ArkZLineLabel_01.png           # Captura de tela 1
-│   │   │   ├── ArkZLineLabel_02.png           # Captura de tela 2
-│   │   │   ├── ArkZLineLabel_03.png           # Captura de tela 3
-│   │   │   ├── ArkZLineLabel_04.png           # Captura de tela 4
+│   │   │   ├── ArkZMemorialDescritivo_01.png           # Captura de tela 1
+│   │   │   ├── ArkZMemorialDescritivo_02.png           # Captura de tela 2
+│   │   │   ├── ArkZMemorialDescritivo_03.png           # Captura de tela 3
+│   │   │   ├── ArkZMemorialDescritivo_04.png           # Captura de tela 4
+│   │   │   ├── ArkZMemorialDescritivo_05.png           # Captura de tela 5
+│   │   │   ├── ArkZMemorialDescritivo_06.png           # Captura de tela 6
+│   │   │   ├── ArkZMemorialDescritivo_07.png           # Captura de tela 7
 │   │   │   ├── Index.htm                      # Página de documentação
 │   │   │   └── style.css                      # Estilos CSS da documentação
 │   │   └── Windows/
-│   │       ├── ArkZLineLabel.csv              # Base de dados de cidades (IBGE)
-│   │       ├── ArkZLineLabel.cuix             # Arquivo de personalização CUIx
-│   │       ├── ArkZLineLabel.dcl              # Interface DCL
-│   │       ├── ArkZLineLabel.lsp              # Código principal AutoLISP
-│   │       ├── ArkZLineLabel.slb              # Biblioteca de slides (logo)
-│   │       └── ArkZLineLabel.txt              # Arquivo de ajuda
+│   │       ├── ArkZMemorialDescritivo.csv              # Base de dados de cidades (IBGE)
+│   │       ├── ArkZMemorialDescritivo.cuix             # Arquivo de personalização CUIx
+│   │       ├── ArkZMemorialDescritivo.dcl              # Interface DCL
+│   │       ├── ArkZMemorialDescritivo.lsp              # Código principal AutoLISP
+│   │       ├── ArkZMemorialDescritivo.slb              # Biblioteca de slides (logo)
+│   │       └── ArkZMemorialDescritivo.txt              # Arquivo de ajuda
 │   └── PackageContents.xml                    # Manifesto do bundle AutoCAD
 │
 ├── Output/                                    # Saída de compilação (não versionada - ver Releases)
-│   └── ArkZLineLabel_v_260911_Setup.exe       # Instalador gerado e anexado à release v2.0.0
+│   └── ArkZMemorialDescritivo_v_260911_Setup.exe       # Instalador gerado e anexado à release v2.0.0
 │
 ├── Support/
 │   ├── Ark-Z.ico                              # Ícone do programa
 │   ├── ArkZ_large.bmp                         # Imagem grande para CUIx
 │   └── ArkZ_small.bmp                         # Imagem pequena para CUIx
 │
-├── Install ArkZLineLabel.iss                  # Script de instalação InnoSetup
+├── Install ArkZMemorialDescritivo.iss                  # Script de instalação InnoSetup
 ├── Instrucoes.txt                             # Instruções de instalação
 ├── LICENSE                                    # Licença GNU GPLv3
 ├── README.MD                                  # Este arquivo
@@ -381,7 +384,7 @@ Este projeto está licenciado sob a Licença GNU GPLv3 - veja o arquivo [LICENSE
 - **Desenvolvedor:** Ezequiel M. Rezende
 - **Versão:** 2.0.0
 - **Data:** Setembro 2026
-- **Website:** [https://em-rezende.github.io/Ark-Z-Arquitetura.github.io/](https://em-rezende.github.io/Ark-Z-Arquitetura.github.io/)
+- **Website:** [https://em-rezende.github.io/](https://em-rezende.github.io/Ark-Z-Arquitetura.github.io/)
 - **Email:** emrezende@gmail.com
 
 ---
@@ -410,7 +413,7 @@ Contribuições são bem-vindas! Para contribuir:
 
 **Feito com ❤️ por ARK-Z ARQUITETURA LTDA**
 
-[⬆ Voltar ao topo](#arkzlinelabel)
+[⬆ Voltar ao topo](#ArkZMemorialDescritivo)
 
 </div>
 
@@ -427,6 +430,6 @@ Contribuições são bem-vindas! Para contribuir:
 | **Estrutura do Projeto** | Refletida a estrutura real do repositório (`Fonts/`, `Output/`, `Support/`, etc.) |
 | **Instalação** | Download pela página de Releases + instalação manual alternativa |
 | **Detalhes Técnicos** | Especificado que a tabela exibe "R=XX,XXm" para curvas |
-| **Licença** | Mantida MIT com créditos atualizados |
+| **Licença** | Modificada para GNU GPL v3 com créditos atualizados |
 | **Contato** | Atualizado com email e website reais |
 

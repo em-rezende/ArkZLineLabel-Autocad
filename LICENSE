@@ -1,4 +1,38 @@
-                     GNU GENERAL PUBLIC LICENSE
+﻿ArkZ Memorial Descritivo - Versão 2.0 plugin para AutoCAD
+
+Copyright (C) 2026 Ark-Z Arquitetura - by Ezequiel M Rezende
+
+Este programa e software livre: voce pode redistribui-lo e/ou modifica-lo sob
+os termos da GNU General Public License, versao 3, publicada pela Free Software
+Foundation - seja a versao 3 da licenca, seja (a seu criterio) qualquer versao
+posterior.
+
+Este programa e distribuido na expectativa de ser util, mas SEM NENHUMA
+GARANTIA, sem mesmo a garantia implicita de COMERCIALIZACAO ou de ADEQUACAO A UM
+PROPOSITO PARTICULAR. Veja a GNU General Public License para mais detalhes.
+
+O texto oficial da licenca (GNU GPL v3, 29 de junho de 2007) esta reproduzido
+integralmente abaixo e tambem em <https://www.gnu.org/licenses/gpl-3.0.txt>.
+Traducao nao oficial em portugues:
+<https://www.gnu.org/licenses/gpl-3.0.pt-br.html>.
+
+-------------------------------------------------------------------------------
+COMPONENTES DE TERCEIROS REDISTRIBUIDOS NESTE REPOSITORIO
+(detalhes em THIRD-PARTY-NOTICES.md):
+  * stockfish.js / stockfish.wasm - motor Stockfish 18 compilado para
+    WebAssembly; GPLv3 - <https://github.com/nmrugg/stockfish.js>
+    (c) 2026, Chess.com, LLC.
+  * chess.js - validacao de lances; MIT - <https://github.com/jhlywa/chess.js>
+    (a licenca MIT e compativel com a GPLv3).
+  * Microsoft.Web.WebView2 - licenca de redistribuicao da Microsoft
+    (pacote NuGet Microsoft.Web.WebView2).
+Os assemblies do AutoCAD (acmgd.dll, acdbmgd.dll, accoremgd.dll, AcCui.dll,
+AdWindows.dll, AdUIMgd.dll) NAO sao redistribuidos: sao apenas referenciados na
+compilacao, pois ja existem no acad.exe. O uso e regido pelo contrato de
+licenca do Autodesk AutoCAD.
+-------------------------------------------------------------------------------
+
+GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>

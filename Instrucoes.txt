@@ -1,16 +1,16 @@
-=== INSTRUCOES DE INSTALACAO - ArkZLineLabel v2.0.0 ===
+=== INSTRUCOES DE INSTALACAO - ArkZMemorialDescritivo v2.0.0 ===
 
 INSTALACAO:
 1. Execute o instalador como Administrador
 2. O plugin sera instalado em:
-   C:\Program Files\Autodesk\ApplicationPlugins\ArkZLineLabel.bundle\
+   C:\Program Files\Autodesk\ApplicationPlugins\ArkZMemorialDescritivo.bundle\
 
 CARREGAMENTO:
 1. Reinicie o AutoCAD (se estiver aberto)
 2. O plugin sera carregado automaticamente
 
 COMANDOS DISPONIVEIS:
-   ARKZLINELABEL - Executar programa principal
+   ARKZMEMORIALDESCRITIVO - Executar programa principal
    ARKZCONFIG    - Configurar ambiente automaticamente
    ARKZSAVEZONE  - Salvar zona no desenho
    SELECTCITY    - Selecionar cidade e calcular fuso
@@ -35,7 +35,7 @@ DESINSTALACAO:
    ou execute o desinstalador no menu Iniciar
 
 SUPORTE:
-   Website: https://em-rezende.github.io/Ark-Z-Arquitetura.github.io/
+   Website: https://em-rezende.github.io/
    Email: emrezende@gmail.com
 
 (c) 2026 ARK-Z ARQUITETURA

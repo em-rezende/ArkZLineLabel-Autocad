@@ -1,5 +1,5 @@
 ;;;===========================================================================
-;;; ArkZLineLabel-Enhanced.LSP (Versão com Interface DCL, CSV e Memorial Descritivo)
+;;; ArkZMemorialDescritivo.lsp (Versão com Interface DCL, CSV e Memorial Descritivo)
 ;;; Version: 2.3 - Com Seleção de Cidade, Fuso Automático e Melhorias
 ;;; Author: Ezequiel M. Rezende
 ;;; Início:  2026/08/01 - Version 1.0
@@ -75,17 +75,17 @@
 ;;;===========================================================================
 ;;; COMANDO PRINCIPAL - VERSÃO CORRIGIDA
 ;;;===========================================================================
-(defun c:ArkZLineLabel (/ dcl_id status sel resp points_list)
+(defun c:ArkZMemorialDescritivo (/ dcl_id status sel resp points_list)
   (vl-load-com)
   
   ;; Salvar zona atual
   (c:ArkZSaveZone)
   
   ;; Carregar o DCL
-  (setq dcl_id (load_dialog "ArkZLineLabel.dcl"))
+  (setq dcl_id (load_dialog "ArkZMemorialDescritivo.dcl"))
   (if (not dcl_id)
     (progn
-      (alert "Erro ao carregar o arquivo ArkZLineLabel.dcl!")
+      (alert "Erro ao carregar o arquivo ArkZMemorialDescritivo.dcl!")
       (exit)
     )
   )
@@ -93,14 +93,14 @@
   ;; Loop principal do diálogo
   (setq status 1)
   (while (> status 0)
-    (if (not (new_dialog "ArkZLineLabel" dcl_id))
+    (if (not (new_dialog "ArkZMemorialDescritivo" dcl_id))
       (exit)
     )
 	
     (mode_tile "#arkz" 1)
-    (show-slide "#img_logo" "ArkZLineLabel" "ArkZLogo" -2)
-    (show-slide "sep1" "ArkZLineLabel" "Separato" -2)
-    (show-slide "sep2" "ArkZLineLabel" "Separato" -2)
+    (show-slide "#img_logo" "ArkZMemorialDescritivo" "ArkZLogo" -2)
+    (show-slide "sep1" "ArkZMemorialDescritivo" "Separato" -2)
+    (show-slide "sep2" "ArkZMemorialDescritivo" "Separato" -2)
 
     ;; Preencher campos do DCL
     (set_tile "eb_nome_lote"   *ArkZ_NomeLote*)
@@ -261,7 +261,7 @@
     )
     
     ;; BOTÃO: Ajuda
-    (action_tile "help" "(ArkZLineLabel_Help)")
+    (action_tile "help" "(ArkZMemorialDescritivo_Help)")
     
     ;; BOTÃO: Fechar
     (action_tile "cancel" "(done_dialog 0)")
@@ -340,15 +340,15 @@
 )
 
 ;;;===========================================================================
-;;; FUNÇÃO: c:ArkZLineLabelSel - Seleção de Polilinha com Navegação de Vértices
+;;; FUNÇÃO: c:ArkZMemorialDescritivoSel - Seleção de Polilinha com Navegação de Vértices
 ;;;===========================================================================
-(defun c:ArkZLineLabelSel (/ dcl_id action sel)
+(defun c:ArkZMemorialDescritivoSel (/ dcl_id action sel)
   "Função separada para o modo de seleção com navegação de vértices"
   
-  (setq dcl_id (load_dialog "ArkZLineLabel.dcl"))
+  (setq dcl_id (load_dialog "ArkZMemorialDescritivo.dcl"))
   (if (not dcl_id)
     (progn
-      (alert "Erro ao carregar o arquivo ArkZLineLabel.dcl!")
+      (alert "Erro ao carregar o arquivo ArkZMemorialDescritivo.dcl!")
       (exit)
     )
   )
@@ -356,7 +356,7 @@
   (setq action 1)
   
   (while (> action 0)
-    (if (not (new_dialog "ArkZLineLabel" dcl_id))
+    (if (not (new_dialog "ArkZMemorialDescritivo" dcl_id))
       (exit)
     )
 
@@ -457,7 +457,7 @@
        )"
     )
     
-    (action_tile "help"   "(ArkZLineLabel_Help)")
+    (action_tile "help"   "(ArkZMemorialDescritivo_Help)")
     (action_tile "cancel" "(done_dialog 0)")
     
     (setq action (start_dialog))
@@ -747,7 +747,7 @@
 (defun ArkZ_ExecuteCSVDialog ( / sub_id csv_status list_seps list_cols current_sep 
                                  raw_lines parsed_points file_handle line_str split_char 
                                  idx_x idx_y parsed_line coord_x coord_y)
-  (setq sub_id (load_dialog "ArkZLineLabel.dcl"))
+  (setq sub_id (load_dialog "ArkZMemorialDescritivo.dcl"))
   (if (not (new_dialog "ArkZLineCSV" sub_id)) (exit))
 
   (setq list_seps (list "Vírgula (,)" "Ponto e Vírgula (;)" "Tabulação (Tab)"))
@@ -986,7 +986,7 @@
   (setq cities nil
         states nil)
   
-  (if (setq file (findfile "ArkZLineLabel.csv"))
+  (if (setq file (findfile "ArkZMemorialDescritivo.csv"))
     (progn
       (setq file (open file "r"))
       (setq line (read-line file))
@@ -1038,15 +1038,15 @@
   
   (if (or (null states) (null cities))
     (progn
-      (alert "Erro ao carregar dados do arquivo ArkZLineLabel.csv!\nVerifique se o arquivo existe e está no formato correto.")
+      (alert "Erro ao carregar dados do arquivo ArkZMemorialDescritivo.csv!\nVerifique se o arquivo existe e está no formato correto.")
       (exit)
     )
   )
   
-  (setq dcl_id (load_dialog "ArkZLineLabel.dcl"))
+  (setq dcl_id (load_dialog "ArkZMemorialDescritivo.dcl"))
   (if (not (new_dialog "SelectCity" dcl_id))
     (progn
-      (alert "Erro ao carregar o diálogo SelectCity!\nVerifique o arquivo ArkZLineLabel.dcl.")
+      (alert "Erro ao carregar o diálogo SelectCity!\nVerifique o arquivo ArkZMemorialDescritivo.dcl.")
       (unload_dialog dcl_id)
       (exit)
     )
@@ -1505,7 +1505,7 @@
                    "   Órgão Ambiental: ______________________________\\P"
                    "   Cartório de Registro de Imóveis: ___________________\\P\\P"
                    "================================================================================\\P"
-                   "Documento gerado pelo sistema ArkZLineLabel v2.3\\P"
+                   "Documento gerado pelo sistema ArkZMemorialDescritivo v2.3\\P"
                    "================================================================================"
   ))
   
@@ -2436,8 +2436,8 @@
 ;;; FUNÇÃO: ArkZ:MainDialog (CORRIGIDA - RETORNA STATUS)
 ;;;===========================================================================
 (defun ArkZ:MainDialog ( / dcl_id status city_data c3d_zone)
-  (setq dcl_id (load_dialog "ArkZLineLabel.dcl"))
-  (if (not (new_dialog "ArkZLineLabel" dcl_id)) (exit))
+  (setq dcl_id (load_dialog "ArkZMemorialDescritivo.dcl"))
+  (if (not (new_dialog "ArkZMemorialDescritivo" dcl_id)) (exit))
 
   ;; Tentar ler do dicionário ARKZ primeiro
   (setq savedZone (ArkZ:GetZoneFromARKZ))
@@ -2549,7 +2549,7 @@
     "(ArkZ:SalvarEstadoTiles) (done_dialog 1)"
   )
   
-  (action_tile "help"   "(ArkZLineLabel_Help)")
+  (action_tile "help"   "(ArkZMemorialDescritivo_Help)")
   (action_tile "cancel" "(done_dialog 0)")
 
   (setq status (start_dialog))
@@ -2608,17 +2608,17 @@
 ;;;===========================================================================
 ;;; COMANDO PRINCIPAL - VERSÃO CORRIGIDA COM RETORNO AO DCL
 ;;;===========================================================================
-(defun c:ArkZLineLabel (/ dcl_id status sel resp points_list)
+(defun c:ArkZMemorialDescritivo (/ dcl_id status sel resp points_list)
   (vl-load-com)
   
   ;; Salvar zona atual
   (c:ArkZSaveZone)
   
   ;; Carregar o DCL
-  (setq dcl_id (load_dialog "ArkZLineLabel.dcl"))
+  (setq dcl_id (load_dialog "ArkZMemorialDescritivo.dcl"))
   (if (not dcl_id)
     (progn
-      (alert "Erro ao carregar o arquivo ArkZLineLabel.dcl!")
+      (alert "Erro ao carregar o arquivo ArkZMemorialDescritivo.dcl!")
       (exit)
     )
   )
@@ -2626,14 +2626,14 @@
   ;; Loop principal do diálogo
   (setq status 1)
   (while (> status 0)
-    (if (not (new_dialog "ArkZLineLabel" dcl_id))
+    (if (not (new_dialog "ArkZMemorialDescritivo" dcl_id))
       (exit)
     )
 	
     (mode_tile "#arkz" 1)
-    (show-slide "#img_logo" "ArkZLineLabel" "ArkZLogo" -2)
-    (show-slide "sep1" "ArkZLineLabel" "Separato" -2)
-    (show-slide "sep2" "ArkZLineLabel" "Separato" -2)
+    (show-slide "#img_logo" "ArkZMemorialDescritivo" "ArkZLogo" -2)
+    (show-slide "sep1" "ArkZMemorialDescritivo" "Separato" -2)
+    (show-slide "sep2" "ArkZMemorialDescritivo" "Separato" -2)
 
     ;; Preencher campos do DCL
     (set_tile "eb_nome_lote"   *ArkZ_NomeLote*)
@@ -2794,7 +2794,7 @@
     )
     
     ;; BOTÃO: Ajuda
-    (action_tile "help" "(ArkZLineLabel_Help)")
+    (action_tile "help" "(ArkZMemorialDescritivo_Help)")
     
     ;; BOTÃO: Fechar
     (action_tile "cancel" "(done_dialog 0)")
@@ -3868,21 +3868,21 @@
 )
 
 ;;;---------------------------------------------------------------------------
-;;; Função ArkZLineLabel_Help
-(defun ArkZLineLabel_Help (/ dcl_id lines display-text)
-  ;; Verifica existência do arquivo ArkZLineLabel.txt
-  (if (not (findfile "ArkZLineLabel.txt"))
+;;; Função ArkZMemorialDescritivo_Help
+(defun ArkZMemorialDescritivo_Help (/ dcl_id lines display-text)
+  ;; Verifica existência do arquivo ArkZMemorialDescritivo.txt
+  (if (not (findfile "ArkZMemorialDescritivo.txt"))
     (progn
-      (alert "O arquivo ArkZLineLabel.txt não foi encontrado.\n\nO programa de ajuda não será apresentado.")
+      (alert "O arquivo ArkZMemorialDescritivo.txt não foi encontrado.\n\nO programa de ajuda não será apresentado.")
       (princ)  ;; Retorna silenciosamente sem abrir o DCL
     )
     (progn
       ;; Arquivo existe, prossegue com a abertura do diálogo
-      (if (and (setq dcl_id (load_dialog "ArkZLineLabel.dcl"))
-               (new_dialog "ArkZLineLabel_Help" dcl_id))
+      (if (and (setq dcl_id (load_dialog "ArkZMemorialDescritivo.dcl"))
+               (new_dialog "ArkZMemorialDescritivo_Help" dcl_id))
         (progn
           ;; Carrega e exibe o texto do arquivo de ajuda
-          (if (setq lines (read-lines "ArkZLineLabel.txt"))
+          (if (setq lines (read-lines "ArkZMemorialDescritivo.txt"))
             (progn
               (setq display-text (process-text-for-display lines 60))
               (start_list "lstAbout")
@@ -3905,12 +3905,12 @@
           )
           
           ;; Exibe logo
-          (show-slide "#img_logo" "ArkZLineLabel" "ArkZLogo" -2)
+          (show-slide "#img_logo" "ArkZMemorialDescritivo" "ArkZLogo" -2)
           
           ;; Preenche dados do registro
           (setq reg1 "ARK-Z ARQUITETURA")
           (setq reg2 "Aplicativos para o Autocad 2013 - 2026")
-          (setq reg3 "ArkZLineLabel - License GNU GPLv3 © 2026 Ezequiel M Rezende")
+          (setq reg3 "ArkZMemorialDescritivo - License GNU GPLv3 © 2026 Ezequiel M Rezende")
           (setq reg4 "https://em-rezende.github.io/")
           (setq regdat (strcat reg1 "\n" reg2 "\n" reg3 "\n" reg4))
           (set_tile "reg_dat" regdat)
@@ -3922,7 +3922,7 @@
           (start_dialog)
           (unload_dialog dcl_id)
         )
-        (alert "Erro ao carregar diálogo de ajuda.\nVerifique o arquivo ArkZLineLabel.dcl.")
+        (alert "Erro ao carregar diálogo de ajuda.\nVerifique o arquivo ArkZMemorialDescritivo.dcl.")
       )
     )
   )
@@ -3960,7 +3960,7 @@
 )
 
 (princ "\nComandos disponíveis:")
-(princ "\n  ArkZLineLabel - Executar programa principal")
+(princ "\n  ArkZMemorialDescritivo - Executar programa principal")
 (princ "\n  ArkZConfig    - Configurar ambiente automaticamente")
 (princ "\n  ArkZSaveZone  - Salvar zona no desenho")
 (princ "\n  SelectCity    - Selecionar cidade e calcular fuso")

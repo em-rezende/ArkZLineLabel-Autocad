@@ -4,10 +4,10 @@
    SchemaVersion="1.0"
    AutodeskProduct="AutoCAD"
    ProductType="Application"
-   Name="ArkZ LineLabel"
+   Name="ArkZ Memorial Descritivo"
    AppVersion="1.0.0"
    FriendlyVersion="1.0.0"
-   Description="ArkZLineLabel: Extrair dados geometricos de Polilinhas."
+   Description="ArkZMemorialDescritivo: Extrair e processar dados geometricos para geracao automatica de anotacoes de vertices"
    Author="Ezequiel M. Rezende"
    Icon="./Contents/Resources/Ark-Z.ico"
    AppNameSpace="appstore.exchange.autodesk.com"
@@ -36,26 +36,26 @@
     
     <!-- Componente principal que carrega automaticamente o CUIX -->
     <ComponentEntry
-        AppName="ArkZLineLabel Ribbon"
+        AppName="ArkZMemorialDescritivo Ribbon"
         Version="1.0.0"
-        ModuleName="./Contents/Windows/ArkZLineLabel.cuix"
-        AppDescription="Faixa de opções ArkZLineLabel"
+        ModuleName="./Contents/Windows/ArkZMemorialDescritivo.cuix"
+        AppDescription="Faixa de opções ArkZMemorialDescritivo"
         PerDocument="False"
         LoadOnAutoCADStartup="True"
     />
     
     <!-- Componente que carrega automaticamente o LSP -->
     <ComponentEntry
-        AppName="ArkZLineLabel LSP"
+        AppName="ArkZMemorialDescritivo LSP"
         Version="1.0.0"
-        ModuleName="./Contents/Windows/ArkZLineLabel.lsp"
-        AppDescription="ArkZLineLabel: Extrair dados geometricos de Polilinhas."
+        ModuleName="./Contents/Windows/ArkZMemorialDescritivo.lsp"
+        AppDescription="ArkZMemorialDescritivo: Extrair e processar dados geometricos para geracao automatica de anotacoes de vertices"
         LoadOnAutoCADStartup="True"
     />
     
     <!-- Comando principal -->
-    <Command Local="ArkZLineLabel" Group="Ark-Z" Global="ArkZLineLabel">
-        <ComponentEntry ModuleName="./Contents/Windows/ArkZLineLabel.lsp"/>
+    <Command Local="ArkZMemorialDescritivo" Group="Ark-Z" Global="ArkZMemorialDescritivo">
+        <ComponentEntry ModuleName="./Contents/Windows/ArkZMemorialDescritivo.lsp"/>
     </Command>
     
   </Components>

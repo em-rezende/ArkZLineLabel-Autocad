@@ -1,12 +1,12 @@
 PADRONIZACAO DE MENU PARA O AUTOCAD
 ARK-Z ARQUITETURA
 -----------------------------------------------------------
-ArkZLineLabel - Versao 2.0
+ArkZMemorialDescritivo - Versao 2.0
 -----------------------------------------------------------
 
 1. DESCRICAO GERAL
 ------------------
-A rotina ArkZLineLabel e uma ferramenta de automacao topografica para AutoCAD.
+A rotina ArkZMemorialDescritivo e uma ferramenta de automacao topografica para AutoCAD.
 O objetivo principal e extrair e processar dados geometricos para geracao automatica de anotacoes de vertices (N/E) via Multileaders, rotulos de azimute/distancia, tabelas nativas de coordenadas UTM e Memorial Descritivo (MText e/ou TXT).
 
 O programa opera em dois modos distintos:
@@ -25,8 +25,8 @@ O programa opera em dois modos distintos:
 3. COMO EXECUTAR A ROTINA
 -------------------------
 1. Carregue o arquivo LISP no AutoCAD utilizando o comando APPLOAD.
-2. Certifique-se de que os arquivos "ArkZLineLabel.dcl" e "SelectCity.csv" estejam no mesmo diretorio do arquivo ".lsp".
-3. Digite o comando na linha de comando do AutoCAD: ArkZLineLabel
+2. Certifique-se de que os arquivos "ArkZMemorialDescritivo.dcl" e "SelectCity.csv" estejam no mesmo diretorio do arquivo ".lsp".
+3. Digite o comando na linha de comando do AutoCAD: ArkZMemorialDescritivo
 4. Escolha o modo de operacao no topo da tela principal.
 
 
